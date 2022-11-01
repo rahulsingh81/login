@@ -85,7 +85,7 @@ const App = () => {
         </LoginSocialFacebook>
 
         <LoginSocialInstagram
-          client_id='54b51f40aaddb9105f62cd1d639cb205'
+          client_id='92e41df2ba8d21eaa30446a2854c172b'
           onLoginStart={onLoginStart}
           redirect_uri={REDIRECT_URI}
           scope='public_profile  login'
@@ -93,7 +93,8 @@ const App = () => {
           access_type='offline'
           onResolve={({ provider, data }) => {
             console.log("instagram", { provider, data });
-            setProvider(provider);            setProfile(data);
+            setProvider(provider);
+            setProfile(data);
           }}
           onReject={(err) => {
             console.log(err);
@@ -137,9 +138,6 @@ const App = () => {
           }}>
           <LinkedInLoginButton />
         </LoginSocialLinkedin>
-
-
-        
       </div>
     </>
   );
