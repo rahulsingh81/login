@@ -67,14 +67,15 @@ const App = () => {
         </LoginSocialGoogle>
 
         <LoginSocialFacebook
-          client_id='b6ea76e94c101cdcf301038022fe2e24'
+          appId= ""
+          fieldsProfile={
+            "id,first_name,last_name,middle_name,name,name_format,picture,short_name,email,gender"
+          }
           onLoginStart={onLoginStart}
+          onLogoutSuccess={onLogoutSuccess}
           redirect_uri={REDIRECT_URI}
-          scope='public_profile email'
-          discoveryDocs='claims_supported'
-          access_type='offline'
           onResolve={({ provider, data }) => {
-            console.log("facebook", { provider, data });
+            console.log("facebook",{ provider, data })
             setProvider(provider);
             setProfile(data);
           }}
