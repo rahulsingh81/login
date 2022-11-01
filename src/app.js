@@ -86,6 +86,7 @@ const App = () => {
 
         <LoginSocialInstagram
           client_id='92e41df2ba8d21eaa30446a2854c172b'
+          client_secret='325c86d8feda8452f2b339a5ae0294a9'
           onLoginStart={onLoginStart}
           redirect_uri={REDIRECT_URI}
           scope='public_profile  login'
