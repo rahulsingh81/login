@@ -67,8 +67,9 @@ const App = () => {
           }}>
           <GoogleLoginButton />
         </LoginSocialGoogle>
+
         <LoginSocialFacebook
-          appId='1181505072724659'
+          appId='656556502867824'
           fieldsProfile={
             "id,first_name,last_name,middle_name,name,name_format,picture,short_name,email,gender"
           }
@@ -129,6 +130,7 @@ const App = () => {
           onLoginStart={onLoginStart}
           onLogoutSuccess={onLogoutSuccess}
           onResolve={({ provider, data }) => {
+            console.log("github", { provider, data });
             setProvider(provider);
             setProfile(data);
           }}
@@ -147,7 +149,7 @@ const App = () => {
           discoveryDocs='claims_supported'
           access_type='offline'
           onResolve={({ provider, data }) => {
-            console.log("hello", { provider, data });
+            console.log("linkedin", { provider, data });
             setProvider(provider);
             setProfile(data);
           }}
