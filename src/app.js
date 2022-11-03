@@ -6,6 +6,7 @@ import {
   LoginSocialFacebook,
   LoginSocialInstagram,
   LoginSocialTwitter,
+  LoginSocialGithub,
   LoginSocialLinkedin,
 } from "reactjs-social-login";
 
@@ -14,6 +15,7 @@ import {
   InstagramLoginButton,
   FacebookLoginButton,
   TwitterLoginButton,
+  GithubLoginButton,
   LinkedInLoginButton,
 } from "react-social-login-buttons";
 
@@ -65,9 +67,8 @@ const App = () => {
           }}>
           <GoogleLoginButton />
         </LoginSocialGoogle>
-
         <LoginSocialFacebook
-          appId= ""
+          appId='1181505072724659'
           fieldsProfile={
             "id,first_name,last_name,middle_name,name,name_format,picture,short_name,email,gender"
           }
@@ -75,7 +76,6 @@ const App = () => {
           onLogoutSuccess={onLogoutSuccess}
           redirect_uri={REDIRECT_URI}
           onResolve={({ provider, data }) => {
-            console.log("facebook",{ provider, data })
             setProvider(provider);
             setProfile(data);
           }}
@@ -121,6 +121,22 @@ const App = () => {
           }}>
           <TwitterLoginButton />
         </LoginSocialTwitter>
+
+        <LoginSocialGithub
+          client_id='bcc32ea35b9f8474e8b5'
+          client_secret='39c2b68da9cf2fec0656c5a5c171042dbd398550'
+          redirect_uri={REDIRECT_URI}
+          onLoginStart={onLoginStart}
+          onLogoutSuccess={onLogoutSuccess}
+          onResolve={({ provider, data }) => {
+            setProvider(provider);
+            setProfile(data);
+          }}
+          onReject={(err) => {
+            console.log(err);
+          }}>
+          <GithubLoginButton />
+        </LoginSocialGithub>
 
         <LoginSocialLinkedin
           client_id=' 77b5wm88k5v9jn'
